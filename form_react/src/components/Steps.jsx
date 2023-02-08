@@ -16,7 +16,7 @@ const Steps = ({ currentStep }) => {
 
     </div>
     <div className={`step ${currentStep >= 2 ? "active" : ""}`}>
-        <FiSend />
+          <FiSend />
         <p>Envio</p>
     </div>
   </div>

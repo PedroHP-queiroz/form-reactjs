@@ -14,12 +14,14 @@ import { useForm } from '../../hooks/useForm';
 function App() {
   const formComponents = [<UserForm />, <ReviewForm />, <Thanks />]
 
-  const { currentStep, currentComponent, changeStep, IsLastStep, IsFirstStep } = useForm(formComponents)
+  const { currentStep, currentComponent, changeStep, isLastStep, isFirstStep } = useForm(formComponents)
 
   return (
     <div className="app">
         <div className="header">
-          <h2>Deixe sua avaliação</h2>
+          <a href="https://github.com/PedroHP-queiroz" target="_blank">
+            <h2>Deixe sua avaliação</h2>
+          </a>
           <p>Ficamos felizes com a sua compra, utilize o formulário abaixo para avaliar o produto!
           </p>
         </div>
@@ -30,21 +32,21 @@ function App() {
             {currentComponent}
             </div>
             <div className="actions">
-              {!IsFirstStep && (
+              {!isFirstStep && (
               <button type='button' onClick={() => changeStep(currentStep - 1)}>
                 <GrFormPrevious />
               <span>Voltar</span>
               </button>
               )}
-              {!IsLastStep ? (
+              {!isLastStep ? (
                 <button type='submit'>
                   <span>Avançar</span>
-                    <GrFormNext />
+                  <GrFormNext />
                 </button>
               ) : (
                 <button type='button'>
                 <span>Enviar</span>
-                  <FiSend />
+                <FiSend />
               </button>
               )}
             </div>

@@ -7,16 +7,16 @@ export function useForm(steps) {
     function changeStep(i, e) {
         if (e) e.preventDefault();
 
-        if(i < 0 || i >= steps.lenght) return
+        if(i < 0 || i >= steps.lenght) return;
         
-        setCurrentStep(i)
+        setCurrentStep(i);
     }
 
     return{
         currentStep,
         currentComponent: steps[currentStep],
         changeStep,
-        IsLastStep: currentStep + 1 === steps.lenght ? true : false,
-        IsFirstStep: currentStep === 0 ? true : false,
+        isLastStep: currentStep + 1 === steps.lenght ? true : false,
+        isFirstStep: currentStep === 0 ? true : false,
     };
 };
